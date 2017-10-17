@@ -1,0 +1,6 @@
+
+<form name="loginForm" ng-submit="authCtrl.signin()">
+    <input type="text" name="username" placeholder="username" ng-model="authCtrl.user.username" ng-minlength="4" required>
+    <input type="password" name="password" placeholder="password" ng-model="authCtrl.user.password" ng-minlength="4" required>
+    <input type="submit" ng-disabled="loginForm.$invalid">
+</form>

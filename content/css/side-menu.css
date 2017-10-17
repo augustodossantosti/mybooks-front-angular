@@ -1,0 +1,50 @@
+/*
+    MyBooks - Gerenciamento de itens para leitura
+
+    author:     Augusto Santos
+    version:    1.0
+*/
+
+@charset 'UTF-8';
+
+/* Formatação do Menu */
+
+side-menu nav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 150px;
+    background-color: rgba(219, 219, 223, 0.596);
+}
+
+div.nav-logo {
+    text-align: center;
+}
+
+side-menu div.nav-logo img {
+    width: 80%;
+    height: auto;
+}
+
+side-menu nav ul {
+    list-style: none;
+    padding: 0px;
+}
+
+side-menu nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+}
+
+a.list-group-item {
+    color: rgb(0, 0, 0);
+}
+
