@@ -1,0 +1,44 @@
+
+<form name="registerItemForm" class="table" ng-submit="itemCtrl.registerItem()">
+    <fieldset>
+        <legend>Basic Information</legend>
+        <div class="tableRow">
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" ng-model="itemCtrl.item.title" required>
+        </div>
+        <div class="tableRow">
+            <label for="edition">Edition:</label>
+            <input type="number" min="1" name="edition" id="edition" ng-model="itemCtrl.item.edition" required>
+        </div>
+        <div class="tableRow">
+            <label for="publisher">Publisher:</label>
+            <input type="text" name="publisher" id="publisher" ng-model="itemCtrl.item.publisher" required>
+        </div>
+        <div class="tableRow">
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" ng-model="itemCtrl.item.description"></textarea>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Advanced Information</legend>
+        <div class="tableRow">
+            <label for="category">Category:</label>
+            <select name="category" id="category" ng-model="itemCtrl.item.category" ng-options="value as name for (name, value) in itemCtrl.categories" required></select>
+        </div>
+        <div class="tableRow">
+            <label for="type">Type:</label>
+            <select name="type" id="type" ng-model="itemCtrl.item.type" ng-options="value as name for (name, value) in itemCtrl.types" required></select>
+        </div>
+        <div class="tableRow">
+            <label for="identification">Identification:</label>
+            <input type="text" name="identification" id="identification" ng-model="itemCtrl.item.identification" required>
+        </div>
+        <div class="tableRow">
+            <label for="file">File:</label>
+            <input type="file" name="file" id="file" file-reader="itemCtrl.itemFile">
+        </div>
+    </fieldset>
+    <div class="tableRow">
+        <input type="submit" ng-disabled="registerItemForm.$invalid">
+    </div>
+</form>

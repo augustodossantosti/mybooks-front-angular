@@ -12,6 +12,15 @@ function shelfOperations(ShelfService) {
 
     vm.shelfs = [];
 
+    vm.registerShelf = function () {
+        ShelfService.registerShelf()
+        .then(function (response) {
+            
+        }).catch(function (errResponse) {
+            
+        })
+    };
+
     vm.getAllShelfs = function () {
         ShelfService.getAllShelfs()
         .then(function (response) {
@@ -21,14 +30,14 @@ function shelfOperations(ShelfService) {
         });
     };
 
-    vm.registerShelf = function () {
-        ShelfService.registerShelf()
+    vm.deleteShelf = function () {
+        ShelfService.deleteShelf()
         .then(function (response) {
             
         }).catch(function (errResponse) {
             
         })
-    }
+    };
 
 }
 

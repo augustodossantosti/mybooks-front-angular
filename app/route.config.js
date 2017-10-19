@@ -11,12 +11,16 @@
         templateUrl: 'app/shelf/shelf-list.html',
         controller: 'ShelfController',
         controllerAs: 'shelfCtrl'
-    }),
-
-    $routeProvider.when('/signin', {
+    })
+    .when('/signin', {
         templateUrl: 'app/authentication/signin-template.html',
         controller: 'AuthenticationController',
         controllerAs: 'authCtrl'
+    })
+    .when('/change-item', {
+        templateUrl: 'app/item/register-item.html',
+        controller: 'ItemController',
+        controllerAs: 'itemCtrl'
     })
     .otherwise(
         {redirectTo: __env.uiRoute.home}

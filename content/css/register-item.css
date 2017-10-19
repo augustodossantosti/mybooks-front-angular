@@ -1,0 +1,39 @@
+/*
+    MyBooks - Gerenciamento de itens para leitura
+
+    author:     Augusto Santos
+    version:    1.0
+*/
+
+@charset 'UTF-8';
+
+/* Formatação do formulário */
+
+form.table {
+    display: table;
+    padding: 10px;
+}
+
+div.tableRow {
+    display: table-row;
+}
+
+div.tableRow > div, div.tableRow > label, div.tableRow > input {
+	display: table-cell;
+	vertical-align: top;
+	padding: 3px;
+}
+
+div.tableRow label:first-child {
+	text-align: right;
+}
+
+form textarea {
+	display: table-cell;
+	width: 500px;
+	height: 200px;
+}
+
+legend {
+	font-weight: bold;
+}
