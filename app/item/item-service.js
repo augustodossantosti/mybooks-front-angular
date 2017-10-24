@@ -11,11 +11,12 @@
         registerItem: registerItem,
         updateItem: updateItem,
         deleteItem: deleteItem,
+        downloadItemFile : downloadItemFile,
         getAvailableCategories: getAvailableCategories,
         getAvailableTypes: getAvailableTypes
     };
 
-    function registerItem(item, file) {
+    function registerItem(item, file, cover) {
         const conf = {
             url: __env.apiUrl.baseUrl + '/items',
             method: 'POST',
@@ -25,10 +26,11 @@
                 formData.append('item', new Blob([JSON.stringify(data.item)], {
                     type: 'application/json'
                 }));
-                formData.append("file", data.file);
+                formData.append('file', data.file);
+                formData.append('cover', data.cover);
                 return formData;
             },
-            data: { item: item, file: file}
+            data: { item: item, file: file, cover: cover}
         };
         return $http(conf);
     }
@@ -39,6 +41,16 @@
 
     function deleteItem(itemId) {
         return $http.delete('', itemId);
+    }
+
+    function downloadItemFile(filePath) {
+        const config = {
+            method: 'POST',
+            url: __env.apiUrl.baseUrl + '/items/file',
+            data: {filePath: filePath},
+            responseType: 'arraybuffer'
+        }
+        return $http(config);
     }
 
     function getAvailableCategories() {

@@ -11,11 +11,12 @@
 
     vm.item = {};
     vm.itemFile = {};
+    vm.itemCover = {};
     vm.categories = {};
     vm.types = {};
 
     vm.registerItem = function () {
-        return ItemService.registerItem(vm.item, vm.itemFile);
+        return ItemService.registerItem(vm.item, vm.itemFile, vm.itemCover);
     };
 
     vm.updateItem = function () {
@@ -25,6 +26,10 @@
     vm.deleteItem = function () {
         return ItemService.deleteItem(vm.item);
     };
+
+    vm.downloadItemFile = function (filePath) {
+        return ItemService.downloadItemFile(filePath);
+    }
 
     vm.getAvailableCategories = function () {
         ItemService.getAvailableCategories()

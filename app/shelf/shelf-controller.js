@@ -6,7 +6,7 @@
  * @version 1.0 24/05/17
  */
 
-function shelfOperations(ShelfService) {
+function shelfOperations(ShelfService, ItemService) {
 
     const vm = this;
 
@@ -39,9 +39,53 @@ function shelfOperations(ShelfService) {
         })
     };
 
+    vm.downloadItemFile = function (filePath) {
+
+        ItemService.downloadItemFile(filePath)
+        .then(function (response) {
+
+            const headers = response.headers();
+            const contentDisposition = headers['content-disposition'];
+            const filename = getFileNameFromHeader(contentDisposition);
+            const contentType = headers['content-type'];
+            const linkElement = document.createElement('a');
+
+            try {
+                const blob = new Blob([response.data], {type: contentType});
+                const url = window.URL.createObjectURL(blob);
+
+                linkElement.setAttribute('href', url);
+                linkElement.setAttribute('download', filename);
+
+                var clickEvent = new MouseEvent("click", {
+                    "view": window,
+                    "bubbles": true,
+                    "cancelable": false
+                });
+                linkElement.dispatchEvent(clickEvent);
+            } catch (ex) {
+                console.log(ex);
+            }
+
+        }).catch(function (errResponse) {
+            console.log(errResponse.data);
+        });
+    }
+
+    function getFileNameFromHeader(contentDispositionHeader) {
+        var result = contentDispositionHeader.split(';')[1].trim().split('=')[1];
+        return result.replace(/"/g, '');
+    }
+
+    function init() {
+        vm.getAllShelfs();
+    }
+
+    init();
+
 }
 
-shelfOperations.$inject = ['ShelfService'];
+shelfOperations.$inject = ['ShelfService', 'ItemService'];
 
 angular
     .module('mybooks')
