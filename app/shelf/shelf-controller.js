@@ -12,12 +12,25 @@ function shelfOperations(ShelfService, ItemService) {
 
     vm.shelfs = [];
 
-    vm.registerShelf = function () {
-        ShelfService.registerShelf()
+    function init() {
+        vm.getAllShelfs();
+    }
+
+    vm.registerShelf = function (category) {
+        ShelfService.registerShelf(category)
         .then(function (response) {
-            
+            vm.getAllShelfs();
         }).catch(function (errResponse) {
-            
+            console.log(errResponse.data);
+        })
+    };
+
+    vm.deleteShelf = function () {
+        ShelfService.deleteShelf()
+        .then(function (response) {
+            vm.getAllShelfs();
+        }).catch(function (errResponse) {
+            console.log(errResponse.data);
         })
     };
 
@@ -30,14 +43,9 @@ function shelfOperations(ShelfService, ItemService) {
         });
     };
 
-    vm.deleteShelf = function () {
-        ShelfService.deleteShelf()
-        .then(function (response) {
-            
-        }).catch(function (errResponse) {
-            
-        })
-    };
+    vm.hasShelfs = function () {
+        return vm.shelfs.length > 0;
+    }
 
     vm.downloadItemFile = function (filePath) {
 
@@ -75,10 +83,6 @@ function shelfOperations(ShelfService, ItemService) {
     function getFileNameFromHeader(contentDispositionHeader) {
         var result = contentDispositionHeader.split(';')[1].trim().split('=')[1];
         return result.replace(/"/g, '');
-    }
-
-    function init() {
-        vm.getAllShelfs();
     }
 
     init();

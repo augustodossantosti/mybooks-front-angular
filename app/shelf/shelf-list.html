@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 
-<div class="shelf-container" ng-repeat="shelf in shelfCtrl.shelfs">
-    <div class="item-container" ng-repeat="item in shelf.items">
-        <div class="item-cover">
-            <img ng-src="{{'data:image/jpeg;base64,' + item.coverBase64}}" alt="Item cover">
+<div id="container">
+
+    <div class="shelf-container" ng-repeat="shelf in shelfCtrl.shelfs">
+        <div class="item-container" ng-repeat="item in shelf.items">
+            <div class="item-cover">
+                <img ng-src="{{'data:image/jpeg;base64,' + item.coverBase64}}" alt="Item cover">
+            </div>
+            <div>
+                <span>{{item.title}}</span>
+            </div>
+            <div>
+                <span>{{item.type}}</span>
+            </div>
+            <div>
+                <a href="#" ng-click="shelfCtrl.downloadItemFile(item.filePath)">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                </a>
+            </div>
         </div>
-        <div>
-            <span>{{item.title}}</span>
-        </div>
-        <div>
-            <span>{{item.type}}</span>
-        </div>
-        <div>
-            <a href="#" ng-click="shelfCtrl.downloadItemFile(item.filePath)">
-                <i class="fa fa-download" aria-hidden="true"></i>
-            </a>
+        <div class="shelf-base">
+            <span>{{shelf.category}}</span>
         </div>
     </div>
-    <div class="shelf-base">
-        <span>{{shelf.category}}</span>
+
+    <div class="btn-add-shelf">
+        <a href="#!/add-item" title="Add new Item"><i class="fa fa-plus" aria-hidden="true"></i></a>
     </div>
 </div>

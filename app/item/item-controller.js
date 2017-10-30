@@ -15,6 +15,11 @@
     vm.categories = {};
     vm.types = {};
 
+    function init() {
+        vm.getAvailableCategories();
+        vm.getAvailableTypes();
+    }
+
     vm.registerItem = function () {
         return ItemService.registerItem(vm.item, vm.itemFile, vm.itemCover);
     };
@@ -22,14 +27,6 @@
     vm.updateItem = function () {
         return ItemService.updateItem(vm.item);
     };
-
-    vm.deleteItem = function () {
-        return ItemService.deleteItem(vm.item);
-    };
-
-    vm.downloadItemFile = function (filePath) {
-        return ItemService.downloadItemFile(filePath);
-    }
 
     vm.getAvailableCategories = function () {
         ItemService.getAvailableCategories()
@@ -49,8 +46,7 @@
         });
     };
 
-    vm.getAvailableCategories();
-    vm.getAvailableTypes();
+    init();
 
  }
 

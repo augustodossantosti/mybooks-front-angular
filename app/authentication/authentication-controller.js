@@ -19,6 +19,11 @@
     vm.logout = function () {
         AuthenticationService.logout();
     }
+
+    vm.isAuthenticated = function () {
+        return true;
+        //return AuthenticationService.isAuthenticated();
+    }
  }
 
  authenticationController.$inject = ['AuthenticationService'];

@@ -17,7 +17,7 @@
         controller: 'AuthenticationController',
         controllerAs: 'authCtrl'
     })
-    .when('/change-item', {
+    .when('/add-item', {
         templateUrl: 'app/item/register-item.html',
         controller: 'ItemController',
         controllerAs: 'itemCtrl'

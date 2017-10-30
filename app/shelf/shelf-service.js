@@ -9,16 +9,25 @@
  function shelfService($http, __env) {
 
     return {
-        getAllShelfs: getAllShelfs,
-        registerShelf: registerShelf
+        registerShelf: registerShelf,
+        deleteShelf: deleteShelf,
+        getAllShelfs: getAllShelfs
     };
-
-    function getAllShelfs() {
-        return $http.get(__env.apiUrl.baseUrl + '/shelfs');
-    }
 
     function registerShelf(category) {
         return $http.post(__env.apiUrl.baseUrl + '/shelfs?category=' + category);
+    }
+
+    function deleteShelf(category) {
+        return $http({
+            url: __env.apiUrl.baseUrl + '/shelfs',
+            method: 'DELETE',
+            params: {category: category}
+        });
+    }
+
+    function getAllShelfs() {
+        return $http.get(__env.apiUrl.baseUrl + '/shelfs');
     }
 
  }

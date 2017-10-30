@@ -5,6 +5,10 @@
     version:    1.0
 */
 
+#container {
+    text-align: center;
+}
+
 .shelf-container {
     width: 80%;
     margin: 50px auto;
@@ -35,5 +39,10 @@
     border-color: rgb(223, 176, 111);
     border-radius: 15px 15px 0px 0px;
     background-color: rgb(223, 176, 111);
-    
+}
+
+.btn-add-shelf {
+    margin: 50px 0px;
+    color: rgb(233, 233, 214);
+    font-size: 50px;
 }

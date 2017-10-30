@@ -9,25 +9,22 @@
 
 /* Formatação do Menu */
 
-side-menu nav {
+side-menu header {
     position: fixed;
     top: 0px;
     left: 0px;
-    height: 100%;
+    height: 100vh;
     width: 60px;
     background-color: rgba(219, 219, 223, 0.596);
 }
 
-side-menu .nav-logo {
+side-menu .user-profile {
+    margin: 20px auto;
+    font-size: 30px;
     text-align: center;
 }
 
-side-menu .nav-logo img {
-    width: 80%;
-    height: auto;
-}
-
-side-menu ul {
+side-menu .list-group {
     list-style: none;
     padding: 0px;
 }

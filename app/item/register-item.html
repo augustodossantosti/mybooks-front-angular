@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 
 <form name="registerItemForm" class="table" ng-submit="itemCtrl.registerItem()">
     <fieldset>
@@ -23,11 +24,15 @@
         <legend>Advanced Information</legend>
         <div class="tableRow">
             <label for="category">Category:</label>
-            <select name="category" id="category" ng-model="itemCtrl.item.category" ng-options="value as name for (name, value) in itemCtrl.categories" required></select>
+            <select name="category" id="category" ng-model="itemCtrl.item.category" 
+                ng-options="value as name for (name, value) in itemCtrl.categories" required>
+            </select>
         </div>
         <div class="tableRow">
             <label for="type">Type:</label>
-            <select name="type" id="type" ng-model="itemCtrl.item.type" ng-options="value as name for (name, value) in itemCtrl.types" required></select>
+            <select name="type" id="type" ng-model="itemCtrl.item.type" 
+                ng-options="value as name for (name, value) in itemCtrl.types" required>
+            </select>
         </div>
         <div class="tableRow">
             <label for="identification">Identification:</label>

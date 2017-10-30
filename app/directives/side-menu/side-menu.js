@@ -10,8 +10,10 @@
 function sideMenu() {
 
     return {
-        templateUrl: 'app/directives/side-menu/side-menu.html',
-        restrict: 'E'
+        restrict: 'E',
+        controller: 'AuthenticationController',
+        controllerAs: 'authCtrl',
+        templateUrl: 'app/directives/side-menu/side-menu.html'
     };
 
 }
