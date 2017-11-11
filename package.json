@@ -1,0 +1,17 @@
+{
+  "name": "mybooks-front-angularjs",
+  "version": "1.0.0",
+  "description": "Gerenciador de itens de leitura.",
+  "main": "mybooks.module.js",
+  "repository": "https://github.com/augustodossantosti/mybooks-front-angular.git",
+  "author": "Augusto Santos <augustodossantos.ti@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-route": "^1.6.6",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
+    "ngstorage": "^0.3.11",
+    "sweetalert2": "^6.11.5"
+  }
+}
