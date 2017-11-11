@@ -6,10 +6,26 @@
  * @version 1.0 24/05/17
  */
 
- // Load environment variables
-const env = {};
-Object.assign(env, window.__env);
-
 angular
     .module('mybooks', ['ngStorage', 'ngRoute'])
-    .constant('__env', env);
+
+    .constant('__env', {
+        apiUrl: {
+            baseUrl: 'http://localhost:8081/mybooks',
+            signin: 'http://localhost:8081/mybooks/login',
+            signup: 'http://localhost:8081/mybooks/signup'
+        },
+
+        uiRote: {
+            home: '/',
+            signin: '/signin',
+            signup: '/signup'
+        },
+
+        authentication : {
+            loginReqHeader: 'X-Requested-With',
+            loginReqHeaderValue: 'XMLHttpRequest',
+            tokenHeader: 'Authorization',
+            tokenPrefix: 'Bearer '
+        }
+    });

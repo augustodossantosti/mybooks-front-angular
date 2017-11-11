@@ -5,14 +5,14 @@
  * @version 1.0 16/10/17
  */
 
- function routeProvider($routeProvider) {
+ function routeProvider($routeProvider, __env) {
 
-    $routeProvider.when('/', {
+    $routeProvider.when(__env.uiRote.home, {
         templateUrl: 'app/shelf/shelf-list.html',
         controller: 'ShelfController',
         controllerAs: 'shelfCtrl'
     })
-    .when('/signin', {
+    .when(__env.uiRote.signin, {
         templateUrl: 'app/authentication/signin-template.html',
         controller: 'AuthenticationController',
         controllerAs: 'authCtrl'
@@ -23,11 +23,11 @@
         controllerAs: 'itemCtrl'
     })
     .otherwise(
-        {redirectTo: __env.uiRoute.home}
+        {redirectTo: '/'}
     );
  }
 
- routeProvider.$inject = ['$routeProvider'];
+ routeProvider.$inject = ['$routeProvider', '__env'];
 
  angular
     .module('mybooks')
