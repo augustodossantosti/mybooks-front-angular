@@ -34,7 +34,7 @@
 
     function responseError(response) {
         if (response.status === 401 || response.status === 403) {
-            $location.path(__env.uiRote.signin);
+            $location.path(__env.uiRoute.signin);
         }
         return $q.reject(response);
     }

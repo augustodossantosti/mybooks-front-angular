@@ -21,8 +21,7 @@
     }
 
     vm.isAuthenticated = function () {
-        return true;
-        //return AuthenticationService.isAuthenticated();
+        return AuthenticationService.isAuthenticated();
     }
  }
 

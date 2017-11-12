@@ -5,7 +5,8 @@ function tokenHandler($localStorage, __env) {
     return {
         getToken: getToken,
         extractToken: extractToken,
-        deleteToken: deleteToken
+        deleteToken: deleteToken,
+        isValidJWT: isValidJWT
     };
 
     function getToken() {
@@ -19,6 +20,11 @@ function tokenHandler($localStorage, __env) {
 
     function deleteToken() {
         delete $localStorage.token;
+    }
+
+    function isValidJWT() {
+        //TODO adicionar validação do token
+        return true;
     }
 }
 

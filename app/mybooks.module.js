@@ -16,7 +16,7 @@ angular
             signup: 'http://localhost:8081/mybooks/signup'
         },
 
-        uiRote: {
+        uiRoute: {
             home: '/',
             signin: '/signin',
             signup: '/signup'

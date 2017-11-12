@@ -7,12 +7,12 @@
 
  function routeProvider($routeProvider, __env) {
 
-    $routeProvider.when(__env.uiRote.home, {
+    $routeProvider.when(__env.uiRoute.home, {
         templateUrl: 'app/shelf/shelf-list.html',
         controller: 'ShelfController',
         controllerAs: 'shelfCtrl'
     })
-    .when(__env.uiRote.signin, {
+    .when(__env.uiRoute.signin, {
         templateUrl: 'app/authentication/signin-template.html',
         controller: 'AuthenticationController',
         controllerAs: 'authCtrl'
