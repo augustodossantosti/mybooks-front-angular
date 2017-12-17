@@ -3,7 +3,36 @@
 
     <head>
         <meta charset="utf-8">
-        <title>MyBooks - Angular 1.x</title>
+        <title>MyBooks - Gerenciador de ebooks</title>
+
+        <!-- SEO Geral -->
+        <meta name="description" content="Gerencie sua coleção de ebooks de forma eficiente.">
+        <link rel="canonical" href="http://www.mybooks.com">
+        <meta name="author" content="Augusto Santos">
+        <meta name="robots" content="index, nofollow">
+
+        <!-- Goole+ / Schema.org -->
+        <meta itemprop="name" content="Mybooks">
+        <meta itemprop="description" content="Gerencie sua coleção de ebooks de forma eficiente.">
+        <meta itemprop="image" content="endereco-imagem">
+        <link href="perfil-no-google+" rel="publisher">
+
+        <!-- Open Graph Facebook -->
+        <meta property="og:title" content="MyBooks - Gerenciador de ebooks">
+        <meta property="og:description" content="Gerencie sua coleção de ebooks de forma eficiente."/>
+        <meta property="og:url" content="http://www.mybooks.com">
+        <meta property="og:site_name" content="Mybooks"/>
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="endereco-imagem">
+      
+        <!-- Twitter -->
+        <meta name="twitter:title" content="MyBooks - Gerenciador de ebooks">
+        <meta name="twitter:description" content="Gerencie sua coleção de ebooks de forma eficiente.">
+        <meta name="twitter:url" content="http://www.mybooks.com">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:image" content="endereco-imagem">
+        <meta name="twitter:creator" content="@perfil">
+        <meta name="twitter:site" content="@perfil-empresa">
 
         <!-- Load mybooks style sheets -->
         <link rel="stylesheet" href="content/css/base-style.css">
@@ -40,9 +69,10 @@
 
     <body>
 
-        <side-menu></side-menu>
-
-        <main class="content" ng-view></main>
+        <section id="browser-view">
+            <side-menu id="side-menu"></side-menu>
+            <main id="main-content" ng-view></main>
+        </section>
 
     </body>
 

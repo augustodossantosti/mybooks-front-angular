@@ -1,5 +1,5 @@
 /*
-    MyBooks - Gerenciamento de itens para leitura
+    MyBooks - Gerenciador de itens para leitura
 
     author:     Augusto Santos
     version:    1.0
@@ -10,7 +10,7 @@
 }
 
 .shelf-container {
-    width: 80%;
+    width: 80vw;
     margin: 50px auto;
     text-align: center;
     color: black;

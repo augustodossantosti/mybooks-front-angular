@@ -1,13 +1,11 @@
 /*
-    MyBooks - Gerenciamento de itens para leitura
+    MyBooks - Gerenciador de itens para leitura
 
     author:     Augusto Santos
     version:    1.0
 */
 
 @charset 'UTF-8';
-
-/* Formatação do formulário */
 
 form.table {
     display: table;

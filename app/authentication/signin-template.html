@@ -6,23 +6,21 @@
     });
 </script>
 
-<div class="login-page">
-    <div class="form">
+<div class="authentication-form">
 
-        <form class="register-form">
-            <input type="text" placeholder="username" required/>
-            <input type="password" placeholder="password" required/>
-            <input type="text" placeholder="email address" required/>
-            <input class="btn-submit" type="submit" value="create" ng-disabled="register-form.$invalid">
-            <p class="message">Already registered? <a href="">Sign In</a></p>
-        </form>
+    <form name="register-form" class="register-form">
+        <input type="text" placeholder="username" ng-minlength="4" required/>
+        <input type="password" placeholder="password" ng-minlength="4" required/>
+        <input type="email" placeholder="email address" required/>
+        <input class="btn-submit" type="submit" value="create" ng-disabled="register-form.$invalid">
+        <p class="message">Already registered? <a href="">Sign In</a></p>
+    </form>
 
-        <form name="login-form" class="login-form" ng-submit="authCtrl.signin()">
-            <input type="text" placeholder="username" ng-model="authCtrl.user.username" ng-minlength="4" required>
-            <input type="password" placeholder="password" ng-model="authCtrl.user.password" ng-minlength="4" required>
-            <input class="btn-submit" type="submit" value="login" ng-disabled="login-form.$invalid">
-            <p class="message">Not registered? <a href="">Create an account</a></p>
-        </form>
+    <form name="login-form" class="login-form" ng-submit="authCtrl.signin()">
+        <input type="text" placeholder="username" ng-model="authCtrl.user.username" ng-minlength="4" required>
+        <input type="password" placeholder="password" ng-model="authCtrl.user.password" ng-minlength="4" required>
+        <input class="btn-submit" type="submit" value="login" ng-disabled="login-form.$invalid">
+        <p class="message">Not registered? <a href="">Create an account</a></p>
+    </form>
 
-    </div>
 </div>
